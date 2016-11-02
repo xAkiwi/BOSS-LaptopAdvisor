@@ -1,0 +1,21 @@
+package laptopAdvisor;
+
+public class LaptopAdvisorTest {
+	
+	static Laptop[] laptop = new Laptop [30];
+	
+	public static void main(String[] args) {
+		
+		try{
+			for (int i = 0; i <30; i++){
+				new FileInput(laptop);
+				System.out.print(laptop);
+			}
+			
+		} catch (FileInput laptop){
+			System.out.println("Sorry, the file you inputed cannot be accessed.");
+		}
+
+	}
+
+}
