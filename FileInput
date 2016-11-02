@@ -1,0 +1,58 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+//Akila
+public class FileInput {
+	
+	Scanner input = new Scanner (new File("Laptop Advisor - Sheet1 (2).csv"));
+
+	public FileInput (Laptop []laptop, Object getPrice){
+	
+	input.nextLine();
+	input.useDelimiter(",");
+	
+	int index = 0;
+
+	while (input.hasNextLine())
+
+		 laptop[index] = new Laptop();
+
+	laptop[index].getBrand(input.next());
+	laptop[index].getModel(input.next());
+	laptop[index].getPrice(input.nextDouble());
+	laptop[index].getDiemensionsResolution(input.next());
+	laptop[index].getMonitor(input.next());
+
+	laptop[index] = new laptopCPU();
+	laptop[index].setCpu(input.next());
+	laptop[index].getRating()[1] = input.nextInt(); 
+
+	laptop[index] = new laptopRAM();
+	laptop[index].setRam(input.next());
+	laptop[index].getRating()[2] = input.nextInt(); 
+
+	laptop[index] = new laptopStorage();
+	laptop[index].setStorage(input.next());
+	laptop[index].getRating()[3] = input.nextInt(); 
+	laptop[index].setStorageSpeed(input.next());
+	laptop[index].getRating()[4] = input.nextInt(); 
+
+	laptop[index] = new laptopGPU();
+	laptop[index].setGpu(input.next());
+	laptop[index].getRating()[5] = input.nextInt(); 
+
+	laptop[index] = new laptopPower();
+	laptop[index].setPower(input.next());
+	laptop[index].getRating()[6] = input.nextInt(); 
+
+	laptop[index] = new laptopSoftware();
+
+	laptop[index] = new laptopWeight();
+	laptop[index].setWeight(input.next());
+	laptop[index].getRating()[7] = input.nextInt(); 
+
+	laptop[index].setHyperlink(input.next()); 
+
+}
+}
+
