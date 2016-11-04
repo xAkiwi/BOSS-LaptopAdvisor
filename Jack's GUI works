@@ -1,0 +1,77 @@
+package laptopAdvisor;
+
+
+
+public class LaptopAdvisorGUI extends JFrame implements ActionListener{
+
+	//fields
+
+
+	//create a new user
+	User user = new User();
+
+	//frame and frame menu elements
+
+
+	//user panel and user panel elements
+
+
+	//elements to fill the weightings array - labels and comboboxes
+
+
+	//create report button
+
+
+	//report panel and report panel elements
+
+
+	//list of laptops
+
+
+	//list of the index of top 3 laptops
+
+
+	/*
+	 * A constructor method that reads in the full laptop list and sets up the user panel,
+	 * report panel and frame
+	 *
+	 *  author - Jack
+	 */
+	public LaptopAdvisorGUI(Laptop[] laptopArray) {
+
+	}
+
+	/*
+	 * This method setups up the user panel for inputting their subjective ratings and weightings
+	 *
+	 * author - Jack
+	 */
+	private void userPanelSetup() {
+
+
+	}
+
+	/*
+	 * This method sets up the radio buttons
+	 *
+	 * author - Jack
+	 */
+	private void setupRadioButtons() {
+
+
+	}
+
+	/*
+	 * This method handles all the actions that may occur on the GUI - menus, radio buttons, combo 
+	 * boxes, report button, laptop image buttons
+	 *
+	 * author - Jack
+	 */
+	public void actionPerformed(ActionEvent e) {
+
+	}
+
+
+
+
+}
