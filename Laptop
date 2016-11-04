@@ -4,7 +4,7 @@ public class Laptop {
 	//field
 			private String Brand;
 			private String model;
-			private double price;
+			private String price;
 			private String dimensionAndResolution;
 			private String monitorTechnology;
 			private String cpu;
@@ -16,116 +16,179 @@ public class Laptop {
 			private String os;
 			private String hyperlink;
 			
-			private int[] rating = new int [10];
+			private int[] rating = new int [9];//0 CPU RATE, 1 RAM RATE, 2 Storage Rate, 3 Storage speed Rate, 4 GPU Rate
+											 //5 Battery Rate, 6 Weight rate, 7 subjective CPU, 8 subjective ram,9 subjective GPU
 			
 			private int score = 0;
-			
-			private String getBrand() {
+
+			public String getBrand() {
 				return Brand;
 			}
 
-			private void setBrand(String brand) {
+			public void setBrand(String brand) {
 				Brand = brand;
 			}
 
-			private String getModel() {
+			public String getModel() {
 				return model;
 			}
 
-			private void setModel(String model) {
+			public void setModel(String model) {
 				this.model = model;
 			}
 
-			private double getPrice() {
+			
+			public String getPrice() {
 				return price;
 			}
 
-			private void setPrice(double price) {
+			public void setPrice(String price) {
 				this.price = price;
 			}
 
-			private String getDimensionAndResolution() {
+			public String getDimensionAndResolution() {
 				return dimensionAndResolution;
 			}
 
-			private void setDimensionAndResolution(String dimensionAndResolution) {
+			public void setDimensionAndResolution(String dimensionAndResolution) {
 				this.dimensionAndResolution = dimensionAndResolution;
 			}
 
-			private String getMonitorTechnology() {
+			public String getMonitorTechnology() {
 				return monitorTechnology;
 			}
 
-			private void setMonitorTechnology(String monitorTechnology) {
+			public void setMonitorTechnology(String monitorTechnology) {
 				this.monitorTechnology = monitorTechnology;
 			}
 
-			private String getCpu() {
+			public String getCpu() {
 				return cpu;
 			}
 
-			private void setCpu(String cpu) {
+			public void setCpu(String cpu) {
 				this.cpu = cpu;
 			}
 
-			private String getRam() {
+			public String getRam() {
 				return ram;
 			}
 
-			private void setRam(String ram) {
+			public void setRam(String ram) {
 				this.ram = ram;
 			}
 
-			private String getWeight() {
+			public String getWeight() {
 				return weight;
 			}
 
-			private void setWeight(String weight) {
+			public void setWeight(String weight) {
 				this.weight = weight;
 			}
 
-			private String getPower() {
+			public String getPower() {
 				return power;
 			}
 
-			private void setPower(String power) {
+			public void setPower(String power) {
 				this.power = power;
 			}
 
-			private String getGpu() {
+			public String getGpu() {
 				return gpu;
 			}
 
-			private void setGpu(String gpu) {
+			public void setGpu(String gpu) {
 				this.gpu = gpu;
 			}
 
-			private String getStorage() {
+			public String getStorage() {
 				return Storage;
 			}
 
-			private void setStorage(String storage) {
+			public void setStorage(String storage) {
 				Storage = storage;
 			}
 
-			private String getOs() {
+			public String getOs() {
 				return os;
 			}
 
-			private void setOs(String os) {
+			public void setOs(String os) {
 				this.os = os;
 			}
 
-			private String getHyperlink() {
+			public String getHyperlink() {
 				return hyperlink;
 			}
 
-			private void setHyperlink(String hyperlink) {
+			public void setHyperlink(String hyperlink) {
 				this.hyperlink = hyperlink;
 			}
+
+			public int[] getRating() {
+				return rating;
+			}
+
+			public void setRating(int[] rating) {
+				this.rating = rating;
+			}
+
+			/* (non-Javadoc)
+			 * @see java.lang.Object#toString()
+			 */
+			public String toString() {
+				return "Laptop [Brand="
+						+ Brand
+						+ ", model="
+						+ model
+						+ ", price="
+						+ price
+						+ ", dimensionAndResolution="
+						+ dimensionAndResolution
+						+ ", monitorTechnology="
+						+ monitorTechnology
+						+ ", cpu="
+						+ cpu
+						+ ", ram="
+						+ ram
+						+ ", weight="
+						+ weight
+						+ ", power="
+						+ power
+						+ ", gpu="
+						+ gpu
+						+ ", Storage="
+						+ Storage
+						+ ", os="
+						+ os
+						+ ", hyperlink="
+						+ hyperlink
+						+ ", rating="
+						+ (rating != null ? arrayToString(rating, rating.length)
+								: null) + ", score=" + score + "]";
+			}
+
+			private String arrayToString(Object array, int len) {
+				StringBuffer buffer = new StringBuffer();
+				buffer.append("[");
+				for (int i = 0; i < len; i++) {
+					if (i > 0)
+						buffer.append(", ");
+					if (array instanceof int[])
+						buffer.append(((int[]) array)[i]);
+				}
+				buffer.append("]");
+				return buffer.toString();
+			}
+
+		
 			
 			
-			 
+			
+
+			
+			
 			
 			
 }
