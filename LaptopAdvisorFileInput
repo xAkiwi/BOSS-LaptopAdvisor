@@ -11,56 +11,63 @@ public class LaptopAdvisorFileAccess {
 
 
 	public LaptopAdvisorFileAccess(Laptop[] laptop) {
-		
+
 		try {
 
 
 			Scanner input = new Scanner(new File("Laptop Advisor - Sheet1.csv"));
-			input.useDelimiter(",");
-
 
 			input.nextLine();
-			
+
+			input.useDelimiter(",");
+
 
 			//index
 			int index = 0;
 			
-			//Laptop objecti
+			while (input.hasNextLine()){
+				
+			//Laptop objective 
 			laptop[index] = new Laptop();
-		
+
 			//Set everything up
 			laptop[index].setBrand(input.next());
-			
+
 			laptop[index].setModel(input.next());
-			
-			laptop[index].setPrice(input.nextDouble());
-			
+
+			laptop[index].setPrice(input.next());
+
 			laptop[index].setDimensionAndResolution(input.next());
-			
+
 			laptop[index].setMonitorTechnology(input.next());
-			
+
 			laptop[index].setCpu(input.next());
-			laptop[index].getRating()[0] = (int) input.nextInt();//0 cpu rate
-			
+			laptop[index].getRating()[0] = (int) input.nextDouble();//0 cpu rate
+
 			laptop[index].setRam(input.next());
 			laptop[index].getRating()[1] = (int) input.nextInt();//1 ram rate
-			
+
 			laptop[index].setStorage(input.next());				 // Storage
-			laptop[index].getRating()[2] = (int) input.nextInt();//2 size rate
+			laptop[index].getRating()[2] = (int) input.nextDouble();//2 size rate
 			laptop[index].getRating()[3] = (int) input.nextInt();//3 speed rate
-			
+
 			laptop[index].setGpu(input.next());
 			laptop[index].getRating()[4] = (int) input.nextInt();//4 Graphic rating
-			
+
 			laptop[index].setPower(input.next());
-			laptop[index].getRating()[5] = (int) input.nextInt();//5 battery rating
-			
+			laptop[index].getRating()[5] = (int) input.nextDouble();//5 battery rating
+
 			laptop[index].setOs(input.next());
-			
+
 			laptop[index].setWeight(input.next());
-			laptop[index].getRating()[6] = (int) input.nextInt();//6 weight rating
-			
+			laptop[index].getRating()[6] = (int) input.nextDouble();//6 weight rating
+
 			laptop[index].setHyperlink(input.next());
+			
+			
+			index++;
+			
+			}
 
 		} catch (FileNotFoundException e) {
 
@@ -69,8 +76,9 @@ public class LaptopAdvisorFileAccess {
 
 	}
 
-	
+
 
 
 }
+
 
