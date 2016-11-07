@@ -1,11 +1,14 @@
 package laptopAdvisor;
 
-
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 
 	//fields
-
+	private Laptop[] laptopArray;
 
 	//create a new user
 	User user = new User();
@@ -39,15 +42,33 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 */
 	public LaptopAdvisorGUI(Laptop[] laptopArray) {
 
+		//setup 30 laptops
+		this.laptopArray = laptopArray;
+
+		//call the 3 methods
+		userPanelSetup();
+		reportPanelSetup();
+		frameSetup();
+
+
 	}
 
+
+
 	/*
-	 * This method setups up the user panel for inputting their subjective ratings and weightings
+	 * is method setups up the user panel for inputting their subjective ratings and weightings
 	 *
 	 * author - Jack
 	 */
 	private void userPanelSetup() {
 
+		JPanel userPanel = new JPanel("USER PANEL");
+		JLabel userPanelTitle = new JLabel("User Panel");
+		
+		//				   (x,y,width,height)
+		userPanel.setBounds(0, 0, 1600, 800);
+		userPanel.setLayout(null);
+		
 
 	}
 
@@ -71,7 +92,24 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 
 	}
 
+	private void frameSetup() {
+		// TODO Auto-generated method stub
+
+	}
+
+	private void reportPanelSetup() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 
 }
+
