@@ -1,0 +1,18 @@
+//open web browser
+
+import java.awt.Desktop;
+
+public class GUI extends JFrame{
+
+	public void openWebBrowser(int index) {
+		
+		if (Desktop.isDesktopSupported()){
+			try{
+				Desktop.getDesktop().browse(new URI (laptopArray[scoreIndex[Index]]).getHyperLink()));
+			}catch (IOException e){
+				e.printStackTrace();
+			}catch (URISyntaxException){
+				e.printStackTrace();
+			}
+		}
+	}
