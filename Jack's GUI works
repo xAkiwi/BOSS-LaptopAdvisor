@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 
-	//fields
+	//fields(move all the jpanel, label buttons up to here to declare please
 	private Laptop[] laptopArray;
 
 	//create a new user
@@ -61,16 +61,32 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 * author - Jack
 	 */
 	private void userPanelSetup() {
-
-		JPanel userPanel = new JPanel("USER PANEL");
-		JLabel userPanelTitle = new JLabel("User Panel");
 		
-		//				   (x,y,width,height)
+		JPanel userPanel = new JPanel();//frame
+		JLabel userPanelTitle = new JLabel("User Panel");//title
+		JButton createReportButton = new JButton("Create Report");//Create report button
+		
+		//set everything up
+		//(x,y,width,height)
+		LaptopAdvisorGUI.add(userPanel);
 		userPanel.setBounds(0, 0, 1600, 800);
 		userPanel.setLayout(null);
+		userPanel.add(userPanelTitle);
+		userPanel.add(createReportButton);
 		
+		userPanelTitle.setBounds(400, 200, 1000, 200);
+		
+		createReportButton.setBounds(800, 1300, 1000, 200);
+		createReportButton.addActionListener(this);//when clicked, call ActionPerformed
+		
+		//call rating and radiobutton setup methods.
+		setupRadioButtons();
+		setupWeightings();
 
 	}
+
+	
+
 
 	/*
 	 * This method sets up the radio buttons
@@ -78,6 +94,22 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 * author - Jack
 	 */
 	private void setupRadioButtons() {
+		
+		JLabel[] radioButtonTitleArray = new JLabel[3];
+		radioButtonTitleArray[0].setName("CPU Rating");
+		radioButtonTitleArray[1].setName("GPU Rating");
+		radioButtonTitleArray[2].setName("Ram Rating");
+		//
+		for(int i = 0; i < 3; i++){
+			
+			userPanel.add(radioButtonTitleArray[i]);
+			//x,y,width,height
+			radioButtonTitleArray[i].setBounds(i+1*300, 800, 200, 100);
+			
+		}
+		
+		
+		
 
 
 	}
@@ -88,28 +120,22 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 *
 	 * author - Jack
 	 */
-	public void actionPerformed(ActionEvent e) {
-
-	}
-
-	private void frameSetup() {
-		// TODO Auto-generated method stub
-
-	}
-
-	private void reportPanelSetup() {
-		// TODO Auto-generated method stub
-
-	}
-
-
-
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent event) {
 		
+		if(event.getSource() == userMenuItem){
+			userPanel.setVisible(true);
+			reportPanel.setVisible(false);
+		}
+		
+		/*if(event.getSource() == radiobutton)
+		 * for(int i = 1; i<4; i++){
+		 * if budgetRadioButton[i] == event.getSource;
+		 * setbudget(i);
+		 * 
+		*/
+		//if(event.getSource() == combobox)
+		//if(event.getSource() == reportButton)
+		
+
 	}
-
-
-
-}
 
