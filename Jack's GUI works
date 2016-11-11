@@ -10,24 +10,36 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	//fields(move all the jpanel, label buttons up to here to declare please
 	private Laptop[] laptopArray;
 
+	//Panel setup fields
+	
+	//RadioButton setup fields
+	JLabel[] radioButtonTitleArray = new JLabel[2];
+
+	JButton[] budgetRadioButton = new JButton[2];
+	JButton[] screenSizeRadioButton = new JButton[2];
+	JButton[] weightRadioButton = new JButton[2];
+
+
+	//
+
 	//create a new user
 	User user = new User();
 
 	//frame and frame menu elements
 
-
 	//user panel and user panel elements
+	JPanel userPanel = new JPanel();//frame
+	JLabel userPanelTitle = new JLabel("User Panel");//title
+	
 
 
 	//elements to fill the weightings array - labels and comboboxes
 
-
 	//create report button
-
+	JButton createReportButton = new JButton("Create Report");//Create report button
 
 	//report panel and report panel elements
-
-
+	
 	//list of laptops
 
 
@@ -61,11 +73,9 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 * author - Jack
 	 */
 	private void userPanelSetup() {
-		
-		JPanel userPanel = new JPanel();//frame
-		JLabel userPanelTitle = new JLabel("User Panel");//title
-		JButton createReportButton = new JButton("Create Report");//Create report button
-		
+
+
+
 		//set everything up
 		//(x,y,width,height)
 		LaptopAdvisorGUI.add(userPanel);
@@ -73,19 +83,19 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 		userPanel.setLayout(null);
 		userPanel.add(userPanelTitle);
 		userPanel.add(createReportButton);
-		
+
 		userPanelTitle.setBounds(400, 200, 1000, 200);
-		
+
 		createReportButton.setBounds(800, 1300, 1000, 200);
 		createReportButton.addActionListener(this);//when clicked, call ActionPerformed
-		
+
 		//call rating and radiobutton setup methods.
 		setupRadioButtons();
 		setupWeightings();
 
 	}
 
-	
+
 
 
 	/*
@@ -94,22 +104,50 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 * author - Jack
 	 */
 	private void setupRadioButtons() {
-		
-		JLabel[] radioButtonTitleArray = new JLabel[3];
-		radioButtonTitleArray[0].setName("CPU Rating");
-		radioButtonTitleArray[1].setName("GPU Rating");
-		radioButtonTitleArray[2].setName("Ram Rating");
-		//
+
+
+		radioButtonTitleArray[0].setName("Budget");
+		radioButtonTitleArray[1].setName("Screen Size");
+		radioButtonTitleArray[2].setName("Weight");
+
+
+
+
 		for(int i = 0; i < 3; i++){
-			
+
+			//setup title of button groups
 			userPanel.add(radioButtonTitleArray[i]);
+
 			//x,y,width,height
 			radioButtonTitleArray[i].setBounds(i+1*300, 800, 200, 100);
-			
+			if(i == 0){
+				//place budget
+				for (int c = 0; c < 3; c++){
+					userPanel.add(budgetRadioButton[c]);
+					budgetRadioButton[c].setBounds(radioButtonTitleArray[i].getX(), 700-c*100, 200, 100);
+					budgetRadioButton[c].addActionListener(this);
+				}
+
+			} else if(i == 1){
+				//place screen size
+				for (int c = 0; c < 3; c++){
+					userPanel.add(screenSizeRadioButton[c]);
+					screenSizeRadioButton[c].setBounds(radioButtonTitleArray[i].getX(), 700-c*100, 200, 100);
+					screenSizeRadioButton[c].addActionListener(this);
+				}
+			} else if(i == 2){
+
+				for (int c = 0; c < 3; c++){
+					userPanel.add(weightRadioButton[c]);
+					weightRadioButton[c].setBounds(radioButtonTitleArray[i].getX(), 700-c*100, 200, 100);
+					weightRadioButton[c].addActionListener(this);
+				}
+			}
+
 		}
-		
-		
-		
+
+
+
 
 
 	}
@@ -121,21 +159,107 @@ public class LaptopAdvisorGUI extends JFrame implements ActionListener{
 	 * author - Jack
 	 */
 	public void actionPerformed(ActionEvent event) {
-		
+
 		if(event.getSource() == userMenuItem){
 			userPanel.setVisible(true);
 			reportPanel.setVisible(false);
 		}
+
+		else if(event.getSource() == budgetRadioButton){
+			for(int i = 0; i < 3; i++){
+				if(event.getSource() == budgetRadioButton[i])
+				user.setBudgetRating(i);
+			}		
+		}
 		
-		/*if(event.getSource() == radiobutton)
-		 * for(int i = 1; i<4; i++){
-		 * if budgetRadioButton[i] == event.getSource;
-		 * setbudget(i);
-		 * 
-		*/
-		//if(event.getSource() == combobox)
-		//if(event.getSource() == reportButton)
+		else if(event.getSource() == screenSizeRadioButton){
+			for(int i = 0; i < 3; i++){
+				if(event.getSource() == screenSizeRadioButton[i])
+				user.setScreensizeRating(i);	 ;
+			}		
+		}
 		
+		else if(event.getSource() == weightRadioButton){
+			for(int i = 0; i < 3; i++){
+				if(event.getSource() == weightRadioButton[i])
+				user.setWeightRating(i);
+			}		
+		}
+			
+				
+		else if(event.getSource() == cpuComboBox){
+			
+			cpuComboBox.getSelectedIndex;
+			for(int i = 0; i < 10; i++){	
+				
+				if(event.getSource() == cpuComboBox[i])
+				user.setCpuRating(i);
+			}	
+		}
+		
+		else if(event.getSource() == gpuComboBox){
+			
+			gpuComboBox.getSelectedIndex;
+			for(int i = 0; i < 10; i++){
+				
+				if(event.getSource() == gpuComboBox[i])
+				user.setGpuRating(i);	
+			}	
+		}
+		
+		else if(event.getSource() == ramComboBox){
+			
+			ramComboBox.getSelectedIndex;
+			for(int i = 0; i < 10; i++){
+				
+				if(event.getSource() == ramComboBox[i])
+				user.setRamRating(i);
+			}	
+		}
+			
+			
+		else if(event.getSource() == reportButton){
+			
+			createReport();
+			
+		}
+		
+		else if(event.getSource() == hyperlinksArray){
+			for(int i = 0; i < 3; i++){
+				if (event.getSource() == hyperlinksArray[i]);
+					openWebBrowser(i);
+			}
+			
+		}
+
+
+}
+
+
+
+
+		private void frameSetup() {
+			// TODO Auto-generated method stub
+
+		}
+
+		private void reportPanelSetup() {
+			// TODO Auto-generated method stub
+
+		}
+
+		private void setupWeightings() {
+			// TODO Auto-generated method stub
+
+		}
+
+
+
+
+
+
+
 
 	}
+
 
