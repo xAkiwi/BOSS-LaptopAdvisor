@@ -1,0 +1,341 @@
+//userPanel 
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.BoxLayout;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JRadioButton;
+import javax.swing.JToggleButton;
+import javax.swing.JTextArea;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+
+public class userPanel {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					userPanel window = new userPanel();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public userPanel() {
+		userPanel();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void userPanel() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 946, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.X_AXIS));
+
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(62, 302, 72, 22);
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		panel.add(comboBox_1);
+
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox.setBounds(431, 302, 72, 22);
+		panel.add(comboBox);
+
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox_2.setBounds(554, 302, 72, 22);
+		panel.add(comboBox_2);
+
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox_3.setBounds(800, 302, 72, 22);
+		panel.add(comboBox_3);
+
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox_4.setBounds(308, 302, 72, 22);
+		panel.add(comboBox_4);
+
+		JComboBox comboBox_5 = new JComboBox();
+		comboBox_5.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox_5.setBounds(677, 302, 72, 22);
+		panel.add(comboBox_5);
+
+		JComboBox comboBox_6 = new JComboBox();
+		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}));
+		comboBox_6.setBounds(185, 302, 72, 22);
+		panel.add(comboBox_6);
+
+		JRadioButton rdbtnBelow = new JRadioButton("Below $500");
+		rdbtnBelow.setBounds(62, 117, 127, 25);
+		panel.add(rdbtnBelow);
+
+		JRadioButton rdbtnTo = new JRadioButton("$500 to $1000");
+		rdbtnTo.setBounds(62, 147, 127, 25);
+		panel.add(rdbtnTo);
+
+		JRadioButton rdbtnAbove = new JRadioButton("Above $1000");
+		rdbtnAbove.setBounds(62, 177, 127, 25);
+		panel.add(rdbtnAbove);
+
+		JRadioButton rdbtnBelowInches = new JRadioButton("Below 12 inches");
+		rdbtnBelowInches.setBounds(234, 117, 127, 25);
+		panel.add(rdbtnBelowInches);
+
+		JRadioButton radioButton = new JRadioButton("13 - 16 inches");
+		radioButton.setBounds(234, 147, 127, 25);
+		panel.add(radioButton);
+
+		JRadioButton rdbtnAboveInches = new JRadioButton("Above 17 inches");
+		rdbtnAboveInches.setBounds(234, 177, 127, 25);
+		panel.add(rdbtnAboveInches);
+
+		JLabel lblHowImportantIs = new JLabel("How important is each catergory to you?");
+		lblHowImportantIs.setBounds(62, 240, 243, 16);
+		panel.add(lblHowImportantIs);
+
+		JLabel lblLaptopAdvisorProgram = new JLabel("Laptop Advisor Program");
+		lblLaptopAdvisorProgram.setBounds(12, 13, 904, 53);
+		lblLaptopAdvisorProgram.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLaptopAdvisorProgram.setFont(new Font("Yu Gothic UI Semilight", Font.BOLD, 24));
+		panel.add(lblLaptopAdvisorProgram);
+
+		JLabel lblCpu = new JLabel("CPU");
+		lblCpu.setBounds(62, 280, 56, 16);
+		panel.add(lblCpu);
+
+		JLabel lblRam = new JLabel("RAM");
+		lblRam.setBounds(308, 280, 56, 16);
+		panel.add(lblRam);
+
+		JLabel lblStorageCapacity = new JLabel("Storage Capacity");
+		lblStorageCapacity.setBounds(431, 280, 105, 16);
+		panel.add(lblStorageCapacity);
+
+		JLabel lblStorageSpeed = new JLabel("Storage Speed");
+		lblStorageSpeed.setBounds(554, 280, 105, 16);
+		panel.add(lblStorageSpeed);
+
+		JLabel lblGpu = new JLabel("GPU");
+		lblGpu.setBounds(185, 280, 56, 16);
+		panel.add(lblGpu);
+
+		JLabel lblBatteryLife = new JLabel("Battery Life");
+		lblBatteryLife.setBounds(677, 280, 72, 16);
+		panel.add(lblBatteryLife);
+
+		JLabel lblWeight = new JLabel("Weight");
+		lblWeight.setBounds(800, 280, 56, 16);
+		panel.add(lblWeight);
+
+		JLabel lblBudget = new JLabel("Budget");
+		lblBudget.setBounds(62, 92, 56, 16);
+		panel.add(lblBudget);
+
+		JLabel lblScreenSize = new JLabel("Screen Size");
+		lblScreenSize.setBounds(234, 92, 107, 16);
+		panel.add(lblScreenSize);
+		
+		JRadioButton rdbtnAcer = new JRadioButton("Acer");
+		rdbtnAcer.setBounds(431, 117, 120, 25);
+		panel.add(rdbtnAcer);
+		
+		JRadioButton rdbtnApple = new JRadioButton("Apple");
+		rdbtnApple.setBounds(431, 147, 120, 25);
+		panel.add(rdbtnApple);
+		
+		JRadioButton rdbtnAsus = new JRadioButton("Asus");
+		rdbtnAsus.setBounds(431, 177, 120, 25);
+		panel.add(rdbtnAsus);
+		
+		JRadioButton rdbtnDell = new JRadioButton("Dell");
+		rdbtnDell.setBounds(550, 117, 120, 25);
+		panel.add(rdbtnDell);
+		
+		JRadioButton rdbtnHp = new JRadioButton("HP");
+		rdbtnHp.setBounds(550, 177, 120, 25);
+		panel.add(rdbtnHp);
+		
+		JRadioButton rdbtnLenovo = new JRadioButton("Lenovo");
+		rdbtnLenovo.setBounds(666, 117, 120, 25);
+		panel.add(rdbtnLenovo);
+		
+		JRadioButton rdbtnMsi = new JRadioButton("MSI");
+		rdbtnMsi.setBounds(666, 147, 120, 25);
+		panel.add(rdbtnMsi);
+		
+		JRadioButton rdbtnSamsung = new JRadioButton("Samsung");
+		rdbtnSamsung.setBounds(666, 177, 120, 25);
+		panel.add(rdbtnSamsung);
+		
+		JRadioButton rdbtnToshiba = new JRadioButton(" Toshiba");
+		rdbtnToshiba.setBounds(782, 117, 120, 25);
+		panel.add(rdbtnToshiba);
+		
+		JRadioButton rdbtnEluktronics = new JRadioButton("Eluktronics");
+		rdbtnEluktronics.setBounds(550, 147, 127, 25);
+		panel.add(rdbtnEluktronics);
+		
+		JLabel lblBrand = new JLabel("Brand");
+		lblBrand.setBounds(431, 92, 56, 16);
+		panel.add(lblBrand);
+		
+		JButton btnGenerateReport = new JButton("Generate Report");
+		btnGenerateReport.setBounds(405, 361, 136, 25);
+		panel.add(btnGenerateReport);
+
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+
+		JMenu mnMenu = new JMenu("Menu");
+		menuBar.add(mnMenu);
+
+		JMenuItem mntmUserPanel = new JMenuItem("User Panel");
+		mntmUserPanel.setIcon(new ImageIcon(getClass().getResource("users (1).png")));
+		mnMenu.add(mntmUserPanel);
+
+		JMenuItem mntmReportPanel = new JMenuItem("Report Panel");
+		mntmReportPanel.setIcon(new ImageIcon(getClass().getResource("analytics (1).png")));
+		mnMenu.add(mntmReportPanel);
+
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setIcon(new ImageIcon(getClass().getResource("exit.png")));
+		mnMenu.add(mntmExit);
+	}
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//reportPanel 
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JProgressBar;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
+
+public class reportPanel {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					reportPanel window = new reportPanel();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public reportPanel() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 946, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		panel.setLayout(null);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(12, 250, 302, 190);
+		textArea.setBackground(Color.LIGHT_GRAY);
+		panel.add(textArea);
+		
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBounds(314, 250, 301, 190);
+		textArea_1.setBackground(Color.GRAY);
+		panel.add(textArea_1);
+		
+		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setBounds(615, 250, 301, 190);
+		textArea_2.setBackground(Color.DARK_GRAY);
+		panel.add(textArea_2);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setBounds(12, 60, 302, 190);
+		panel.add(btnNewButton);
+		
+		JButton button = new JButton("");
+		button.setBounds(314, 60, 301, 190);
+		panel.add(button);
+		
+		JButton button_1 = new JButton("");
+		button_1.setBounds(615, 60, 301, 190);
+		panel.add(button_1);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnMenu = new JMenu("Menu");
+		menuBar.add(mnMenu);
+		
+		JMenuItem mntmUserPanel = new JMenuItem("User Panel");
+		mntmUserPanel.setIcon(new ImageIcon(getClass().getResource("users (1).png")));
+		mnMenu.add(mntmUserPanel);
+		
+		JMenuItem mntmReportPanel = new JMenuItem("Report Panel");
+		mntmReportPanel.setIcon(new ImageIcon(getClass().getResource("analytics (1).png")));
+		mnMenu.add(mntmReportPanel);
+		
+		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setIcon(new ImageIcon(getClass().getResource("exit.png")));
+		mnMenu.add(mntmExit);
+	}
+}
