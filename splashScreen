@@ -1,0 +1,104 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.JTextField;
+import javax.swing.JWindow;
+import javax.swing.Timer;
+
+public class SplashScreen extends JWindow {
+
+	private static JProgressBar progressBar;
+	private static int count = 1;
+	private static int TIMER_PAUSE = 30;
+	private static int MAX = 105;
+	private static Timer progressBarTimer;
+
+	public SplashScreen() {
+		createSplash();
+	}
+
+	private void createSplash() {
+
+		JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout());
+		JLabel splashImage = new JLabel(new ImageIcon(getClass().getResource("Capture.PNG")));
+		panel.add(splashImage);
+
+		progressBar = new JProgressBar();
+		progressBar.setMaximum(MAX);
+		progressBar.setStringPainted(true);
+		progressBar.setForeground(new Color(50,150,200));
+		progressBar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		panel.add(progressBar, BorderLayout.SOUTH);
+
+		this.setContentPane(panel);
+		this.pack();
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+
+		startProgressBar();
+
+	}
+
+	private void startProgressBar(){
+
+		progressBarTimer = new Timer(TIMER_PAUSE, new ActionListener(){
+
+			public void actionPerformed(ActionEvent arg0){
+				progressBar.setValue(count);
+
+				if (MAX == count){
+					SplashScreen.this.dispose();
+					progressBarTimer.stop();
+					
+					JFrame frame = new JFrame();
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					
+					JPanel userPanel = new JPanel();
+					JLabel welcome = new JLabel();
+
+					frame.pack();
+					
+					frame.setTitle("Hehe xd");
+					frame.setSize(800, 450);
+					frame.setBackground(Color.BLACK);
+					
+			        frame.add(userPanel);
+			        userPanel.add(welcome);
+			        userPanel.setBackground(Color.BLACK);
+			        
+					welcome.setText("enter your name:");
+					welcome.setFont(new Font("Century Gothic", Font.PLAIN, 72));
+					welcome.setForeground(new Color(50, 150, 200));
+
+					Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+					frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
+					
+					frame.setVisible(true);
+						
+				}
+				count++;
+			}
+
+		});
+		progressBarTimer.start();
+	}
+	public static void main(String[] args){
+		new SplashScreen();
+	}
+	
+}
+
